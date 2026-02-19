@@ -40,13 +40,13 @@ I initially tried compiling directly on the target machine, which turned out to 
 
 ---
 
-### Usage Notes
+### How to Compile Binaries
 - Decompress `picoclaw-0.1.2.zip`, to a folder. 
 - Now, open a terminal in that decompressed path, and type `SET GOARCH=386` and  `SET GOOS=WINDOWS`. 
 - Next, to build the source code type `mingw32-make build` and which would build the 32-bit ex, after the build is done. 
 - Navigate to the build folder, and open a terminal in that path, and test it out by:
-	- For **Powershell**: `./picoclaw`
-	- For **Command Prompt**: `picoclaw`
+	- For **Powershell**: `./picoclaw-windows-386`
+	- For **Command Prompt**: `picoclaw-windows-386`
 - To run this properly, add `picoclaw.exe` to your **PATH** under **System Variables**.
 - After that, you can run it from **any directory** in a terminal.
 
