@@ -65,6 +65,6 @@ I initially tried compiling directly on the target machine, which turned out to 
 
 ### Potential Vulnerabilities (Referred from [A Picoclaw Can Compromise Your Entire System](https://dev.to/jxlee007/a-picoclaw-can-compromise-your-entire-system-11l7)) :
 
-- Command Injection: The agent has a "shell tool" that executes commands on your computer. Sounds handy for automating tasks, but here's what an attacker could do:
-- Path Traversal: The file system tool lets the AI read and write files. But it doesn't check WHICH files. An attacker can do this:
-- Plaintext Secrets: All API keys, bot tokens, and passwords are stored in a JSON file. Unencrypted. Just sitting there.
+- Command Injection: The agent has a "shell tool" that executes commands on your computer. Sounds handy for automating tasks.
+- Path Traversal: The file system tool lets the AI read and write files. But it doesn't check WHICH files. 
+- Plaintext Secrets: All API keys, bot tokens, and passwords are stored in a JSON file. Unencrypted.
