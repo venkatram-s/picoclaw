@@ -1,3 +1,10 @@
+## Update (Dated 21/02/2026 - IST)
+
+**_Binaries have been removed, as this is an experimental, unofficial fork used for learning and portability testing. Programming is about understanding logic and implementing it securely, not just getting outputs, and vibe-coding tools become dangerous when they are used to replace comprehension instead of supporting it.  If you choose to experiment with this code, please do read the potential vulnerabilities (listed at the end of the readme file), and try at your own discretion and risk._** 
+
+---
+
+
 <div align="center">
   <img src="assets/logo.jpg" alt="PicoClaw" width="512">
 
@@ -9,15 +16,11 @@
 
 - If you want to know how Picoclaw works, refer the original repository's `readme.md` [file](https://github.com/sipeed/picoclaw/blob/main/README.md).
 
-## Update (Dated 19/02/2026 - IST)
-
-**_Binaries have been removed, as this is an experimental, unofficial fork used for learning and portability testing. Programming is about understanding logic and implementing it securely, not just getting outputs, and vibe-coding tools become dangerous when they are used to replace comprehension instead of supporting it.  If you choose to experiment with this code, please do so at your own discretion and risk._** 
-
 ---
 
 > ⚠️ **CAUTION** ⚠️ - This is an experimental fork intended for learning purposes. Review and understand the source before building or running it.
 
-Thanks to vibe coding, some curiosity, and patience, I managed to port PicoClaw to a low-end laptop, and it works but has not undergone extensive security review.
+Thanks to vibe coding, some curiosity, and patience, I managed to port PicoClaw to a low-end laptop, and it works but hasn't undergone extensive security review.
 
 I initially tried compiling directly on the target machine, which turned out to be *really* slow, so most of the heavy lifting was done on a faster computer.
 
@@ -45,7 +48,7 @@ I initially tried compiling directly on the target machine, which turned out to 
 - Now, open a terminal in that decompressed path, and type `SET GOARCH=386` and  `SET GOOS=WINDOWS`. 
 - Next, to build the source code type `mingw32-make build` and which would build the 32-bit ex, after the build is done. 
 - Navigate to the build folder, and open a terminal in that path, and test it out by:
-	- For **Powershell**: `./picoclaw-windows-386`
+	- For **Powershell**: d`./picoclaw-windows-386`
 	- For **Command Prompt**: `picoclaw-windows-386`
 - To run this properly, add `picoclaw.exe` to your **PATH** under **System Variables**.
 - After that, you can run it from **any directory** in a terminal.
@@ -57,3 +60,11 @@ I initially tried compiling directly on the target machine, which turned out to 
 - No extensive testing was done
 - Stability and performance are not guaranteed
 - Proceed at your own risk
+
+---
+
+### Potential Vulnerabilities (Referred from [A Picoclaw Can Compromise Your Entire System](https://dev.to/jxlee007/a-picoclaw-can-compromise-your-entire-system-11l7)) :
+
+- Command Injection: The agent has a "shell tool" that executes commands on your computer. Sounds handy for automating tasks, but here's what an attacker could do:
+- Path Traversal: The file system tool lets the AI read and write files. But it doesn't check WHICH files. An attacker can do this:
+- Plaintext Secrets: All API keys, bot tokens, and passwords are stored in a JSON file. Unencrypted. Just sitting there.
